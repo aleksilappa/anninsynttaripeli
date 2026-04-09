@@ -269,14 +269,14 @@ submitOrder.onclick = () => {
 
   if (hasBeer && amount > 1000) {
     typeText("Kiinni veti!", "#3cff3c");
-
+    correctSound.currentTime = 0;
+    correctSound.play().catch(() => {});
+    
     setTimeout(() => {
       barResponse.textContent = "";
-      correctSound.currentTime = 0;
-      correctSound.play().catch(() => {});
       fadeOut(() => {
         barImg.src = "images/bar/bar3.png";
-        music.pause();
+        music.loop = false;
         // 🔥 PIILOTA KAIKKI
         barUI.classList.add("hidden");
         submitOrder.style.display = "none";
