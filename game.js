@@ -254,8 +254,6 @@ submitOrder.onclick = () => {
 
   /* BAR2 */
   if (barImg.src.includes("bar2")) {
-    correctSound.currentTime = 0;
-    correctSound.play().catch(() => {});
     typeText("Tuon pöytään.", "#ffd700");
     return;
   }
@@ -274,9 +272,11 @@ submitOrder.onclick = () => {
 
     setTimeout(() => {
       barResponse.textContent = "";
+      correctSound.currentTime = 0;
+      correctSound.play().catch(() => {});
       fadeOut(() => {
         barImg.src = "images/bar/bar3.png";
-
+        music.pause();
         // 🔥 PIILOTA KAIKKI
         barUI.classList.add("hidden");
         submitOrder.style.display = "none";
