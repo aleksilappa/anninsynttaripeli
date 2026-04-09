@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Synttäripeli</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="fadeOverlay"></div>
+<!-- Alkunäyttö -->
+<div id="startScreen">
+  <img id="startImage" src="images/start/start.png" alt="Aloituskuva" style="max-width:300px; height:auto; margin-bottom:20px;">
+  <p>Synttäripeli synttäreiden kunniaksi. Pidä puhelin pystysuorassa ja äänet päällä.</p>
+  <button id="startBtn">Aloita</button>
+</div>
+
+<!-- Peli -->
+<div id="game" class="hidden">
+  <div id="viewport">
+
+    <div id="bg-far"></div>
+    <div id="bg-mid"></div>
+    <div id="bg-front"></div>
+
+    <img id="car" src="images/objects/car.png">
+    <img id="doorsLayer" src="images/objects/doors.png">
+    <img id="player" src="images/character/idle_right.png">
+
+  </div>
+</div>
+
+<div id="controls" class="hidden">
+  <button id="leftBtn">◀</button>
+  <button id="rightBtn">▶</button>
+</div>
+
+<!-- Baarielementit -->
+<div id="barScreen" class="hidden">
+  <img id="barImg" src="">
+  <button id="goToCounter" class="hidden">Tiskille</button>
+  <p id="barResponse"></p>
+
+<div id="barUI" class="hidden">
+  <input id="orderInput" type="text">
+  <button id="submitOrder">Tilaa</button>
+</div>
+</div>
+
+<audio id="clock" src="audio/clock.mp3"></audio>
+<audio id="music" src="audio/music.mp3" loop></audio>
+<audio id="correctSound" src="audio/correct.mp3"></audio>
+<audio id="doorSound" src="audio/door.mp3"></audio>
+<audio id="typingSound" src="audio/typing.mp3" loop></audio>
+
+<script src="game.js"></script>
+</body>
+</html>
